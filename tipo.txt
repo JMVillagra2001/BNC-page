@@ -1,0 +1,16 @@
+abajo bnc regular 22
+White paper semibold 22 pt
+Menú secundario light 20 pt
+Títulos medium 52 azul oscuro
+Texto light 18 
+Subtitulo como funciona regular 27
+Texto como funciona regular 22
+Desarrollo medium 40 
+Ubicación regular 22 pilar light 22
+Nombre medium 21
+Director regular 17
+alguna frase regular 14
+apoyan el proyecto y preguntas frecuentes medium 40
+pregunta medium 30
+respuesta light 26
+footer medium 20

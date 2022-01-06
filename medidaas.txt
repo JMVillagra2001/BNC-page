@@ -1,0 +1,46 @@
+conectar wallet: 
+203x34  clip-path: polygon(5% 0, 100% 0, 100% 75%, 95% 100%, 0 100%, 0 26%);
+
+white paper: 
+294x102
+clip-path: polygon(7% 0, 100% 0, 100% 68%, 93% 100%, 0 100%, 0 34%);
+
+proyecto:
+154x34
+clip-path: polygon(8% 0, 100% 0, 100% 73%, 93% 100%, 0 100%, 0 33%);
+
+como fun:
+227x34
+clip-path: polygon(7% 0, 100% 0, 100% 62%, 93% 100%, 0 100%, 0 39%);
+
+market:
+193x34
+clip-path: polygon(7% 0, 100% 0, 100% 68%, 93% 100%, 0 100%, 0 35%);
+
+ubicaciones:
+178x34
+clip-path: polygon(7% 0, 100% 0, 100% 69%, 93% 100%, 0 100%, 0 33%);
+
+quienes:
+199x34
+clip-path: polygon(7% 0, 100% 0, 100% 67%, 93% 100%, 0 100%, 0 36%);
+
+integrantes:
+276x277
+clip-path: polygon(10% 0, 100% 0, 100% 89%, 89% 100%, 0 100%, 0 10%);
+
+pregunta:
+881x61
+clip-path: polygon(3% 0, 100% 0, 100% 70%, 97% 100%, 0 100%, 0 30%);
+
+nombre y telefono:
+257x39
+clip-path: polygon(6% 0, 100% 0, 100% 66%, 94% 100%, 0 100%, 0 35%);
+
+mail:
+534x39
+clip-path: polygon(4% 0, 100% 0, 100% 61%, 96% 100%, 0 100%, 0 37%);
+
+consulta:
+534x126
+clip-path: polygon(5% 0, 100% 0, 100% 82%, 95% 100%, 0 100%, 0 19%);
