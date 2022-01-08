@@ -22,7 +22,7 @@
 }
 
 html{
-    font-size: 62.5%;
+    font-size: 80%;
     overflow-x: hidden;
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
@@ -427,10 +427,17 @@ header .config input[type="checkbox"]:checked + .check:after{
     color: white;
 }
 
+.marketplace .box-container .box .content .status{
+    font-size: 1.6rem;
+    padding:.5rem 0;
+    line-height: 1.5;
+    display: flex;
+}
+
 .marketplace .box-container .box .content .status p{
     color: yellow;
     font-size: 1.6rem;
-    padding:.5rem 0;
+    padding: 0 .5rem;
     line-height: 1.5;
 }
 
@@ -617,8 +624,26 @@ header .config input[type="checkbox"]:checked + .check:after{
     padding: 2rem;
 }
 
+.about-us .row h2 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    font-size: 3rem; 
+ } 
 
+ .about-us .row h2 span { 
+    background:#fff; 
+    padding:0 10px; 
+}
 
+.about-us .row h3 {
+    width: 100%; 
+    text-align: left; 
+    font-size: 3rem;
+    margin: 10px 0 20px; 
+ } 
 
 
 
@@ -780,10 +805,19 @@ header .config input[type="checkbox"]:checked + .check:after{
     
     header{
         padding:1rem 2rem;
+        background-color: var(--primary-color);
+    }
+
+    header .navbar{
+        clip-path: none;
     }
 
     section{
         padding:2rem;
+    }
+
+    header .config{
+        visibility: hidden;
     }
 
 
@@ -791,35 +825,70 @@ header .config input[type="checkbox"]:checked + .check:after{
 
 @media (max-width:768px){
 
-    header .icons #marketplace-bars{
-        display: inline-block;
+    header nav{
+        max-height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
-
-    header .navbar{
-        position: absolute;
-        top:100%; left:0; right:0;
-        background:#fff;
-        border-top: .1rem solid rgba(0,0,0,.2);
-        border-bottom: .1rem solid rgba(0,0,0,.2);
-        padding:1rem;
-        clip-path: polygon(7% 0, 100% 0, 100% 60%, 93% 100%, 0 100%, 0 42%);
+    
+    header nav .logo{
+        color:var(--primary-color);
+        font-size: 2.5rem;
+        font-weight: bolder;
     }
-
-    header .navbar.active{
-        clip-path: polygon(7% 0, 100% 0, 100% 60%, 93% 100%, 0 100%, 0 42%);
+    
+    header nav .logo i{
+        color:var(--secondary-color);
     }
-
-    header .navbar a{
+    
+    header nav .bar-btn{
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+    
+    header nav .navbar{
+        position: fixed;
+        width: 100%;
+        height: 0;
+        top: 100px;
+        text-align: center;
+        transition: all .5s;
+    
+    }
+    
+    header nav .navbar li{
+        display: none;
         display: block;
-        padding:1.5rem;
-        margin:1rem;
-        font-size: 2rem;
-        background:#eee;
+        line-height: 30px;
+        margin: 50px 0;
+        transition: all .5s;
     }
-
-    #search-form #search-box{
-        width:90%;
-        margin:0 1rem;
+    
+    header nav .navbar li a{
+        font-size: 1.7rem;
+        padding:.5rem 1.5rem;
+        color: white;
+    }
+    
+    header nav .navbar li a.active,
+    header nav .navbar li a:hover{
+        color: #2DB49A;
+        transition: .3s;
+    }
+    
+    #check {
+        display: none;
+    }
+    
+    #check:checked ~ .navbar{
+        height: 100vh;
+    }
+    
+    #check:checked ~ .navbar li{
+        display: block;
     }
 
     .home .wrap .content h3{
