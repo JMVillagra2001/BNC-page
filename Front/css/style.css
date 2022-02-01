@@ -5,7 +5,7 @@
 558B98 
 */
 :root{
-    --primary-color:#122938;
+    --primary-color:#132938;
     --secondary-color:#80CCDD;
     --light-color: #018C9A;
     --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
@@ -17,7 +17,6 @@
     box-sizing: border-box;
     text-decoration: none;
     outline: none; border:none;
-    text-transform: capitalize;
     transition: all .2s linear;
 }
 
@@ -49,12 +48,12 @@ section{
     font-family: 'Encode Sans';
     font-size: 52px;
     padding-bottom: 4px;
-    padding-right: 16px;/*medium 52 azul oscuro*/
+    padding: 30px 0em 5px 88px;/*medium 52 azul oscuro*/
     text-transform: none;
 }
 
 .head .line{
-    width: 300px;
+    width: 425px;
     height: 4px;
     background: var(--secondary-color);
 }
@@ -84,7 +83,7 @@ section{
 header{
     position: fixed;
     top:0; left: 0; right:0;
-    padding:1rem 7%;
+    padding:0.3rem 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,6 +106,7 @@ header .navbar a{
     font-size: 1.7rem;
     padding:.5rem 1.5rem;
     color: white;
+    font-weight: 500;
 }
 
 header .navbar a.active,
@@ -123,11 +123,45 @@ header .config{
     background: transparent;
     flex-direction: column;
 }
+header .billetera{
 
+}
 header .config button{
     font-size: 1.5rem;
     color: white;
     background: transparent;
+    -webkit-border-top-right-radius: 16px;
+    -webkit-border-bottom-left-radius: 16px;
+    -moz-border-radius-topright: 16px;
+    -moz-border-radius-bottomleft: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    -webkit-box-shadow: 0 0 0 1px #80CCDD;
+box-shadow: 0 0 0 1px #80CCDD;
+
+    background: var(--primary-color);
+    padding: 4px 16px;
+    margin: 16px;
+
+}
+
+header .config button:hover {
+    font-size: 1.5rem;
+    color: #122938;
+    background: transparent;
+    -webkit-border-top-right-radius: 16px;
+    -webkit-border-bottom-left-radius: 16px;
+    -moz-border-radius-topright: 16px;
+    -moz-border-radius-bottomleft: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    -webkit-box-shadow: 0 0 0 1px #132938;
+box-shadow: 0 0 0 1px #132938;
+
+    background: var(--secondary-color);
+    padding: 4px 16px;
+    margin: 16px;
+    font-weight: 500;
 
 }
 
@@ -251,14 +285,15 @@ header .config input[type="checkbox"]:checked + .check:after{
     color: white;
     font-size: 24rem;
     font-family: "Merriweather";
+    font-weight: 500;
 }
 
 .home .wrap .content p{
     color: white;
     font-size: 22px;
     padding-bottom: 16px;
-    font-family: "Encode Sans semibold";
-    line-height: 1.5;
+    font-family: "Encode Sans";
+    line-height: 0.5;
 }
 .home .wrap .content .btn{
     -webkit-border-top-right-radius: 16px;
@@ -288,12 +323,13 @@ header .config input[type="checkbox"]:checked + .check:after{
     font-family: 'Encode Sans';
     font-size: 52px;
     padding-bottom: 4px;
-    padding-right: 16px;/*medium 52 azul oscuro*/
+    padding: 30px 0em 5px 121px;
+    /*medium 52 azul oscuro*/
     text-transform: none;
 }
 
 .proyect .head .line{
-    width: 300px;
+    width: 400px;
     height: 4px;
     background: var(--secondary-color);
 }
@@ -303,7 +339,8 @@ header .config input[type="checkbox"]:checked + .check:after{
     flex-wrap: wrap;
     gap:1.5rem;
     align-items: center;
-    padding: 6%;
+    padding: 3em 10%;
+
 }
 
 .proyect .row .video{
@@ -326,8 +363,13 @@ header .config input[type="checkbox"]:checked + .check:after{
 .proyect .row .content p{
     color:var(--primary-color);
     font-size: 22px;
-    padding: 16px 48px;
-    line-height: 1.5;
+    padding: 16px 15px;
+    line-height: 1.2;
+}
+#BNCtoken {
+    color:var(--secondary-color);
+    font-weight: bold;
+    font-size: 20px;
 }
 
 
@@ -341,21 +383,22 @@ header .config input[type="checkbox"]:checked + .check:after{
 }
 
 .function .head .line{
-    width: 500px;
+    width: 550px;
 }
 
 .function .box-container{
     display: flex;
-    margin: 6%;
+    margin: 0%;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    padding: 2% 14%
 }
 
 .function .box-container .box{
     margin: 0 2%;
-    max-width: 300px;
+    max-width: 200px;
 }
 
 .function .box-container .box .image{
@@ -373,7 +416,7 @@ header .config input[type="checkbox"]:checked + .check:after{
 }
 
 .function .box-container .box .content{
-    padding:2rem;
+    padding: 1.rem;
     padding-top: 0;
 }
 
@@ -386,7 +429,7 @@ header .config input[type="checkbox"]:checked + .check:after{
     color:var(--primary-color);
     font-size: 1.6rem;
     padding:.5rem 0;
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 
@@ -396,7 +439,7 @@ header .config input[type="checkbox"]:checked + .check:after{
 
 .marketplace .box-container{
     display: flex;
-    margin: 6%;
+    margin: 2%;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
@@ -404,48 +447,66 @@ header .config input[type="checkbox"]:checked + .check:after{
 }
 
 .marketplace .box-container .box{
-    -webkit-border-top-right-radius: 32px;
-    -webkit-border-bottom-left-radius: 32px;
-    -moz-border-radius-topright: 32px;
-    -moz-border-radius-bottomleft: 32px;
-    border-top-right-radius: 32px;
-    border-bottom-left-radius: 32px;
+    border-radius: 32px;
     
-    margin: 16px 4%;
+    margin: 8px 2%;
     background: #fff;
-    border:.1rem solid rgba(0,0,0,.2);
     box-shadow: var(--box-shadow);   
-    max-width: 400px;
+    max-width: 300px;
+    max-height: 355px;
     background-color: var(--primary-color); 
+    -webkit-box-shadow: 3px 3px 10px -3px #000000;
+box-shadow: 3px 3px 10px -3px #000000;
+cursor:pointer;
 }
+
+.marketplace .box-container .box:hover{
+    border-radius: 32px;
+    
+    margin: 8px 2%;
+    background: #fff;
+    box-shadow: var(--box-shadow);   
+    max-width: 310px;
+    max-height: 375px;
+    background-color: var(--secondary-color); 
+    -webkit-box-shadow: 3px 3px 10px -3px #80CCDD;
+box-shadow: 3px 3px 10px -3px #80CCDD;
+cursor:pointer;
+}
+
 
 .marketplace .box-container .box .image{
     -webkit-border-top-right-radius: 32px;
     -moz-border-radius-topright: 32px;
     border-top-right-radius: 32px;
 
-    height: 25rem;
+    height: 21rem;
     width: 100%;
     overflow: hidden;
     position: relative;
 }
 
 .marketplace .box-container .box .image img{
-    height: 100%;
+    height: 95%;
     width: 100%;
     object-fit: cover;
+    border-top-right-radius: 32px;
+    border-top-left-radius: 32px;
+    cursor: pointer;
 }
 
 .marketplace .box-container .box .content{
     padding:2rem;
     padding-top: 0;
     color: white;
+    cursor: pointer;
 }
 
 .marketplace .box-container .box .content h3{
     color:var(--primary-color);
     font-size: 2.5rem;
     color: white;
+    text-align: center;
 }
 
 .marketplace .box-container .box .content p{
@@ -453,13 +514,15 @@ header .config input[type="checkbox"]:checked + .check:after{
     padding:.5rem 0;
     line-height: 1.5;
     color: white;
+    text-align: center;
 }
 
 .marketplace .box-container .box .content .status{
     font-size: 1.6rem;
-    padding:.5rem 0;
+    padding: 0em 0em 0em 2.3em;
     line-height: 1.5;
     display: flex;
+    text-align: center;
 }
 
 .marketplace .box-container .box .content .status p{
@@ -467,6 +530,7 @@ header .config input[type="checkbox"]:checked + .check:after{
     font-size: 1.6rem;
     padding: 0 .5rem;
     line-height: 1.5;
+    text-align: center;
 }
 
 .ubication .wrap{
@@ -531,7 +595,7 @@ header .config input[type="checkbox"]:checked + .check:after{
 }
 
 .about-us .head .line{
-    width: 500px;
+    width: 550px;
     height: 4px;
     background: var(--secondary-color);
 }
@@ -541,23 +605,32 @@ header .config input[type="checkbox"]:checked + .check:after{
     flex-wrap: wrap;
     gap:1.5rem;
     align-items: center;
-    padding: 32px 6%;
+    padding: 25px 8%;
     justify-content: space-evenly;
 }
 
 .about-us .row .image{
     flex:1 1 45rem;
-    border-right: var(--secondary-color) solid 4px;
     padding: 32px;
+    
 }
 
 .about-us .row .image img{ 
     width: 100%;
     height: 100%;
+    -webkit-border-top-right-radius: 32px;
+    -webkit-border-bottom-left-radius: 32px;
+    -moz-border-radius-topright: 32px;
+    -moz-border-radius-bottomleft: 32px;
+    border-top-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+
 }
 
 .about-us .row .content{
     flex:1 1 45rem;
+    border-left: var(--secondary-color) solid 4px;
+    padding-left: 3em;
 }
 
 .about-us .row .content p{
@@ -568,23 +641,23 @@ header .config input[type="checkbox"]:checked + .check:after{
 
 .about-us .row .content2 h1{
     color:var(--primary-color);
-    font-size: 3rem;
+    font-size: 2.3rem;
     font-family: 'Encode Sans';
     margin: 1rem 0 0 0;
 }
 
 .about-us .row .content2 h3{
     color:var(--primary-color);
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     font-family: 'Encode Sans';
-    margin: 1rem 0 0 0;
+    margin: 0rem 0 0 0;
 }
 
 .about-us .row .content2 p{
     color:var(--primary-color);
     font-size: 1.4rem;
     font-family: 'Encode Sans';
-    margin: 1rem 0 0 0;
+    margin: 0.5rem 0 0 0;
 }
 
 .about-us .row .content2 .box{
@@ -596,11 +669,7 @@ header .config input[type="checkbox"]:checked + .check:after{
     border-bottom-left-radius: 32px;
 
     background: #fff;
-    border:.1rem solid rgba(0,0,0,.2);
-    max-width: 320px;
-    background-color: var(--light-color); 
-    -webkit-box-shadow: 5px 5px 10px 0 #018C9A;
-    box-shadow: 5px 5px 10px 0 #018C9A;
+    
 }
 
 .about-us .row .content2 .box .image{
@@ -608,8 +677,9 @@ header .config input[type="checkbox"]:checked + .check:after{
     -moz-border-radius-topright: 32px;
     border-top-right-radius: 32px;
 
-    height: 25rem;
-    width: 100%;
+    height: 20rem;
+    max-width: 20rem;
+    
     overflow: hidden;
     position: relative;
     border-right: none;
@@ -620,10 +690,11 @@ header .config input[type="checkbox"]:checked + .check:after{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 500%;
 }
 
 .about-us .row .content2 .box .wrap{
-    padding: 1rem 8%;
+    padding: 1.5rem 10%;
     color: white;
     max-width: 320px;
     display: flex;
@@ -631,7 +702,7 @@ header .config input[type="checkbox"]:checked + .check:after{
 }
 
 .about-us .row .content2 .box .wrap span{
-    width: 48px;
+    ;
     height: 48px;
 }
 
@@ -647,9 +718,9 @@ header .config input[type="checkbox"]:checked + .check:after{
 
 .about-us .row .container .header{
     background-color: var(--primary-color);
-    -webkit-border-top-right-radius: 16px;
-    -moz-border-radius-topright: 16px;
-    border-top-right-radius: 16px;
+    -webkit-border-top-right-radius: 32px;
+    -moz-border-radius-topright: 32px;
+    border-top-right-radius: 32px;
 }
 
 .about-us .row .container .header h3{
@@ -659,16 +730,17 @@ header .config input[type="checkbox"]:checked + .check:after{
 }
 
 .about-us .row .container .content{
-    background-color: var(--secondary-color);
+    background-color: var(--light-color);
     -webkit-border-bottom-left-radius: 32px;
     -moz-border-radius-bottomleft: 32px;
     border-bottom-left-radius: 32px;
 }
 
 .about-us .row .container .content p{
-    color: var(--primary-color);
-    font-size: 2.5rem;
+    color: white;
+    font-size: 2rem;
     padding: 2rem;
+    font-weight: 100;
 }
 
 .about-us .row h2 {
@@ -690,6 +762,11 @@ header .config input[type="checkbox"]:checked + .check:after{
     text-align: left; 
     font-size: 3rem;
  } 
+ .parrafo{
+     font-size: 20px;
+     font-weight: 200;
+     color:var(--primary-color);
+ }
 
 
 
