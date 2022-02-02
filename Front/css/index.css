@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
-/*
-9DCADB
-002735
-558B98 
-*/
+
 :root{
     --primary-color:#132938;
     --secondary-color:#80CCDD;
@@ -27,10 +23,6 @@ html{
     scroll-behavior: smooth;
 }
 
-section{
-    background: white;
-    /*padding:2rem 9%;*/
-}
 
 /*section:nth-child(even){
     background:#eee;
@@ -701,10 +693,10 @@ cursor:pointer;
     justify-content: space-between;
 }
 
-.about-us .row .content2 .box .wrap span{
+/*.about-us .row .content2 .box .wrap span{
     ;
     height: 48px;
-}
+}*/
 
 .about-us .row .content2 .box .wrap img{
     width: 100%;

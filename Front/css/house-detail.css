@@ -1,0 +1,335 @@
+:root{
+    --primary-color:#132938;
+    --secondary-color:#80CCDD;
+    --light-color: #018C9A;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Encode Sans', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 70%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+
+.card{
+    flex-direction: row!important;
+    box-shadow: var(--box-shadow) ;
+}
+
+.card-body {
+    padding: 0!important;
+}
+
+.row{
+    --bs-gutter-x: 0;
+    padding-left: 0;
+    padding-left: 0;
+}
+
+
+
+
+
+.head{
+    padding: 2% 0 0;
+    margin: 0 4%;
+    width: 300px;
+}
+
+.head .heading{
+    text-align: right;
+    color:var(--primary-color);
+    font-family: 'Encode Sans';
+    font-size: 52px;
+    padding-bottom: 4px;
+    padding: 30px 0em 5px 88px;/*medium 52 azul oscuro*/
+    text-transform: none;
+}
+
+.head .line{
+    width: 425px;
+    height: 4px;
+    background: var(--secondary-color);
+}
+
+.btn{
+    -webkit-border-top-right-radius: 16px;
+    -webkit-border-bottom-left-radius: 16px;
+    -moz-border-radius-topright: 16px;
+    -moz-border-radius-bottomleft: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: white;
+    background: var(--secondary-color);
+    cursor: pointer;
+    padding: 16px 48px;
+}
+
+.btn:hover{
+    background: var(--secondary-color);
+    letter-spacing: .1rem;
+}
+
+header{
+    position: fixed;
+    top:0; left: 0; right:0;
+    padding:0.3rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    border-bottom: var(--secondary-color) solid 1px;
+}
+
+header .logo{
+    color:var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+header .logo i{
+    color:var(--secondary-color);
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    padding:.5rem 1.5rem;
+    color: white;
+    font-weight: 500;
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+    color:#fff;
+}
+
+header .config{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    background: transparent;
+    flex-direction: column;
+}
+header .billetera{
+
+}
+header .config button{
+    font-size: 1.5rem;
+    color: white;
+    background: transparent;
+    -webkit-border-top-right-radius: 16px;
+    -webkit-border-bottom-left-radius: 16px;
+    -moz-border-radius-topright: 16px;
+    -moz-border-radius-bottomleft: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    -webkit-box-shadow: 0 0 0 1px #80CCDD;
+box-shadow: 0 0 0 1px #80CCDD;
+
+    background: var(--primary-color);
+    padding: 4px 16px;
+    margin: 16px;
+
+}
+
+header .config button:hover {
+    font-size: 1.5rem;
+    color: #122938;
+    background: transparent;
+    -webkit-border-top-right-radius: 16px;
+    -webkit-border-bottom-left-radius: 16px;
+    -moz-border-radius-topright: 16px;
+    -moz-border-radius-bottomleft: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    -webkit-box-shadow: 0 0 0 1px #132938;
+box-shadow: 0 0 0 1px #132938;
+
+    background: var(--secondary-color);
+    padding: 4px 16px;
+    margin: 16px;
+    font-weight: 500;
+
+}
+
+
+header .config input[type="checkbox"]{
+    -webkit-appearance: none;
+    visibility: hidden;
+
+}
+
+header .config .checkbox{
+
+}
+
+header .config .check{
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 26px;
+    background: var(--primary-color);
+    cursor: pointer;	
+    border-radius: 20px;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+    border: var(--primary-color) solid 1px;
+}
+
+header .config input[type="checkbox"]:checked + .check{
+    background-color: var(--secondary-color);
+}
+
+header .config .check:before{
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+header .config input[type="checkbox"]:checked + .check:before{
+    transform: translateX(-50px);
+
+}
+
+header .config .check:after{
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateX(50px);
+}
+
+header .config input[type="checkbox"]:checked + .check:after{
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+.footer .box-container {
+    padding: 2% 6%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    background: var(--primary-color);
+}
+
+.footer .box-container .box h3 {
+    padding: 0.5rem 0;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.footer .box-container .box a {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.footer .box-container .box a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.footer .box-container .box form {
+    max-width: 90rem;
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+.footer .box-container .box form .inputBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer .box-container .box form .inputBox .input {
+    width: 49%;
+}
+
+.footer .box-container .box form .inputBox .input span {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+.footer .box-container .box form .inputBox .input input {
+    -webkit-border-top-right-radius: 16px;
+    -webkit-border-bottom-left-radius: 16px;
+    -moz-border-radius-topright: 16px;
+    -moz-border-radius-bottomleft: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+
+    padding: 1rem;
+}
+.footer .box-container .box form .inputBox .input textarea {
+    -webkit-border-top-right-radius: 16px;
+    -webkit-border-bottom-left-radius: 16px;
+    -moz-border-radius-topright: 16px;
+    -moz-border-radius-bottomleft: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+
+    padding: 4%;
+}
+
+.footer .box-container .box form .inputBox .input input,
+.footer .box-container .box form .inputBox .input textarea {
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.footer .box-container .box form .inputBox .input input:focus,
+.footer .box-container .box form .inputBox .input textarea:focus {
+    border: 0.1rem solid var(--green);
+}
+
+.footer .box-container .box form .inputBox .input textarea {
+    height: 20rem;
+    resize: none;
+}
+
+.footer .box-container .box form .btn {
+    display: flex;
+    margin: 2rem auto;
+}
