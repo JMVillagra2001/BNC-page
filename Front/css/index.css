@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
-
-:root{
-    --primary-color:#132938;
-    --secondary-color:#80CCDD;
-    --light-color: #018C9A;
-    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
-}
+@import "./theme-variables.css";
 
 *{
     font-family: 'Encode Sans', sans-serif;
@@ -21,6 +15,7 @@ html{
     overflow-x: hidden;
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
+    background: var(--background);
 }
 
 
@@ -659,8 +654,6 @@ cursor:pointer;
     -moz-border-radius-bottomleft: 32px;
     border-top-right-radius: 32px;
     border-bottom-left-radius: 32px;
-
-    background: #fff;
     
 }
 
@@ -676,6 +669,7 @@ cursor:pointer;
     position: relative;
     border-right: none;
     padding: 0;
+    margin: auto;
 }
 
 .about-us .row .content2 .box .image img{
@@ -719,9 +713,13 @@ cursor:pointer;
     color: white;
     font-size: 2.5rem;
     padding: 1.5rem;
+    cursor: pointer;
 }
 
 .about-us .row .container .content{
+    overflow: hidden;
+    transition: all 0.5s ease;
+    border-left: none;
     background-color: var(--light-color);
     -webkit-border-bottom-left-radius: 32px;
     -moz-border-radius-bottomleft: 32px;
@@ -745,7 +743,7 @@ cursor:pointer;
  } 
 
  .about-us .row h2 span { 
-    background:#fff; 
+    background:var(--background); 
     padding:0 10px; 
 }
 
@@ -860,34 +858,6 @@ cursor:pointer;
 
 
 
-
-
-
-
-
-
-
-.loader-container{
-    position: fixed;
-    top:0; left:0;
-    height:100%; 
-    width:100%;
-    z-index: 10000;
-    background:#fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.loader-container img{
-    width:35rem;
-}
-
-.loader-container.fade-out{
-    top:-110%;
-    opacity:0;
-}
 
 
 

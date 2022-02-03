@@ -6,14 +6,16 @@ var root = document.querySelector(':root');
 function changeDayNight(){
   console.log("changeDayNight", day)
   if(day){
-    root.style.setProperty('--primary-color', '#041C32');
-    root.style.setProperty('--secondary-color', '#7AFFDB');
-    root.style.setProperty('--light-color', '#2DB49A');
+    root.style.setProperty('--background', '#ffffff');
+    root.style.setProperty('--primary-color', '#132938');
+    root.style.setProperty('--secondary-color', '#80CCDD');
+    root.style.setProperty('--light-color', '#018C9A');
     day = false;
   }else{
-    root.style.setProperty('--primary-color', '#041C32');
-    root.style.setProperty('--secondary-color', '#7AFFDB');
-    root.style.setProperty('--light-color', '#2DB49A');
+    root.style.setProperty('--background', '#2a2f32');
+    root.style.setProperty('--primary-color', '#ffffff');
+    root.style.setProperty('--secondary-color', '#80CCDD');
+    root.style.setProperty('--light-color', '#018C9A');
     day = true;
   }
 }
@@ -92,13 +94,3 @@ var swiper = new Swiper(".ubication-slider", {
     },
   },
 });
-
-function loader(){
-  document.querySelector('.loader-container').classList.add('fade-out');
-}
-
-function fadeOut(){
-  setInterval(loader, 3000);
-}
-
-window.onload = fadeOut;

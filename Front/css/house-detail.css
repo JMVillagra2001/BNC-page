@@ -1,9 +1,4 @@
-:root{
-    --primary-color:#132938;
-    --secondary-color:#80CCDD;
-    --light-color: #018C9A;
-    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
-}
+@import "./theme-variables.css";
 
 *{
     font-family: 'Encode Sans', sans-serif;
@@ -19,6 +14,7 @@ html{
     overflow-x: hidden;
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
+    background: var(--background);
 }
 
 
@@ -32,9 +28,9 @@ html{
 }
 
 .row{
-    --bs-gutter-x: 0;
-    padding-left: 0;
-    padding-left: 0;
+    --bs-gutter-x: 0!important;
+    padding-left: 0!important;
+    padding-left: 0!important;
 }
 
 
@@ -86,7 +82,6 @@ html{
 }
 
 header{
-    position: fixed;
     top:0; left: 0; right:0;
     padding:0.3rem 7%;
     display: flex;
@@ -236,6 +231,26 @@ header .config input[type="checkbox"]:checked + .check:after{
 
 
 
+.marketplace{
+    margin: 4%;
+    min-height: 60vh;
+    display: flex;
+}
+
+.marketplace img{
+    box-shadow: -25px -25px 0px 3px var(--primary-color);
+    -webkit-box-shadow: -25px -25px 0px 3px var(--primary-color);
+    -moz-box-shadow: -25px -25px 0px 3px var(--primary-color);
+}
+
+.line-border-right{
+    border-right: var(--secondary-color) solid 4px;
+}
+
+
+
+
+
 
 
 
@@ -332,4 +347,11 @@ header .config input[type="checkbox"]:checked + .check:after{
 .footer .box-container .box form .btn {
     display: flex;
     margin: 2rem auto;
+}
+
+
+@media (max-width:990px) {
+    .line-border-right{
+        border-right: none;
+    }
 }
