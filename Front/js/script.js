@@ -3,15 +3,21 @@ let navbar = document.querySelector('.navbar');
 var day = true;
 var root = document.querySelector(':root');
 
-function changeDayNight(){
+function changeDayNight() {
   console.log("changeDayNight", day)
-  if(day){
+  if (day) {
+    root.style.setProperty('--nav-background', '#ffffff');
+    root.style.setProperty('--nav-color', '#132938');
+    root.style.setProperty('--nav-hover-color', '#fff');
     root.style.setProperty('--background', '#ffffff');
     root.style.setProperty('--primary-color', '#132938');
     root.style.setProperty('--secondary-color', '#80CCDD');
     root.style.setProperty('--light-color', '#018C9A');
     day = false;
-  }else{
+  } else {
+    root.style.setProperty('--nav-background', '#2a2f32');
+    root.style.setProperty('--nav-color', '#80CCDD');
+    root.style.setProperty('--nav-hover-color', '#132938');
     root.style.setProperty('--background', '#2a2f32');
     root.style.setProperty('--primary-color', '#ffffff');
     root.style.setProperty('--secondary-color', '#80CCDD');
@@ -28,23 +34,23 @@ function changeDayNight(){
 let section = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header .navbar a');
 
-window.onscroll = () =>{
+window.onscroll = () => {
 
   marketplace.classList.remove('fa-times');
   navbar.classList.remove('active');
 
-  section.forEach(sec =>{
+  section.forEach(sec => {
 
     let top = window.scrollY;
     let height = sec.offsetHeight;
     let offset = sec.offsetTop - 150;
     let id = sec.getAttribute('id');
 
-    if(top >= offset && top < offset + height){
-      navLinks.forEach(links =>{
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach(links => {
         links.classList.remove('active');
-        const nav = document.querySelector('header .navbar a[href*='+id+']');
-        if(nav){
+        const nav = document.querySelector('header .navbar a[href*=' + id + ']');
+        if (nav) {
           nav.classList.add('active');
         }
       });
@@ -68,7 +74,7 @@ var swiper = new Swiper(".home-slider", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  loop:true,
+  loop: true,
 });
 
 var swiper = new Swiper(".ubication-slider", {
@@ -78,10 +84,10 @@ var swiper = new Swiper(".ubication-slider", {
     delay: 7500,
     disableOnInteraction: false,
   },
-  loop:true,
+  loop: true,
   breakpoints: {
     0: {
-        slidesPerView: 1,
+      slidesPerView: 1,
     },
     640: {
       slidesPerView: 2,
@@ -93,4 +99,17 @@ var swiper = new Swiper(".ubication-slider", {
       slidesPerView: 3,
     },
   },
+});
+
+$(".about-us .row .container .header").click(function(){
+  var contenido=$(this).next(".about-us .row .container .content");
+     
+  if(contenido.css("display")=="none"){ //open		
+     contenido.slideDown(1000);			
+     $(this).addClass("open");
+  }
+  else{ //close		
+     contenido.slideUp(1000);
+     $(this).removeClass("open");	
+ }          
 });

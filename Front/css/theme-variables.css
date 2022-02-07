@@ -1,4 +1,7 @@
 :root{
+    --nav-color: #132938;
+    --nav-background: #fff;
+    --nav-hover-color: #fff;
     --background: #ffffff;
     --primary-color:#132938;
     --secondary-color:#80CCDD;
