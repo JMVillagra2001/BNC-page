@@ -355,3 +355,21 @@ header .config input[type="checkbox"]:checked + .check:after{
         border-right: none;
     }
 }
+
+.titulo3{
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.per-night{
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.Casa{
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+}
