@@ -1,11 +1,17 @@
 
-let navbar = document.querySelector('.navbar');
-var day = true;
 var root = document.querySelector(':root');
 
+setTheme(localStorage.getItem('theme') === undefined || localStorage.getItem('theme') === null ? 'day' : localStorage.getItem('theme'));
+
 function changeDayNight() {
-  console.log("changeDayNight", day)
-  if (day) {
+  const theme = localStorage.getItem('theme') === undefined || localStorage.getItem('theme') === null ? 'day' : localStorage.getItem('theme');
+  const newTheme = theme === 'day' ? 'dark' : 'day';
+  setTheme(newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+function setTheme(theme) {
+  if (theme === 'day') {
     root.style.setProperty('--nav-background', '#ffffff');
     root.style.setProperty('--nav-color', '#132938');
     root.style.setProperty('--nav-hover-color', '#fff');
@@ -13,8 +19,14 @@ function changeDayNight() {
     root.style.setProperty('--primary-color', '#132938');
     root.style.setProperty('--secondary-color', '#80CCDD');
     root.style.setProperty('--light-color', '#018C9A');
-    day = false;
-  } else {
+    root.style.setProperty('--marketplace-color', '#132938');
+    root.style.setProperty('--marketplace-text', '#ffffff');
+    root.style.setProperty('--marketplace-hover', '#80CCDD');
+    root.style.setProperty('--image-background', '#132938');
+    root.style.setProperty('--asks-background', '#132938');
+    root.style.setProperty('--title-color', '#132938');
+    root.style.setProperty('--description-color', '#ffffff');
+  } else if (theme === 'dark') {
     root.style.setProperty('--nav-background', '#2a2f32');
     root.style.setProperty('--nav-color', '#80CCDD');
     root.style.setProperty('--nav-hover-color', '#132938');
@@ -22,45 +34,14 @@ function changeDayNight() {
     root.style.setProperty('--primary-color', '#ffffff');
     root.style.setProperty('--secondary-color', '#80CCDD');
     root.style.setProperty('--light-color', '#018C9A');
-    day = true;
+    root.style.setProperty('--marketplace-color', '#80CCDD');
+    root.style.setProperty('--marketplace-text', '#132938');
+    root.style.setProperty('--marketplace-hover', '#132938');
+    root.style.setProperty('--image-background', '#80CCDD');
+    root.style.setProperty('--asks-background', '#80CCDD');
+    root.style.setProperty('--title-color', '#ffffff');
+    root.style.setProperty('--description-color', '#132938');
   }
-}
-
-/*marketplace.onclick = () =>{
-  marketplace.classList.toggle('fa-times');
-  navbar.classList.toggle('active');
-}*/
-
-let section = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header .navbar a');
-
-window.onscroll = () => {
-
-  marketplace.classList.remove('fa-times');
-  navbar.classList.remove('active');
-
-  section.forEach(sec => {
-
-    let top = window.scrollY;
-    let height = sec.offsetHeight;
-    let offset = sec.offsetTop - 150;
-    let id = sec.getAttribute('id');
-
-    if (top >= offset && top < offset + height) {
-      navLinks.forEach(links => {
-        links.classList.remove('active');
-        const nav = document.querySelector('header .navbar a[href*=' + id + ']');
-        if (nav) {
-          nav.classList.add('active');
-        }
-      });
-    };
-
-  });
-
-  let header = document.querySelector('header');
-  header.classList.toggle('scrolling-active', window.scrollY > 0);
-  console.log(window.scrollY);
 }
 
 var swiper = new Swiper(".home-slider", {
@@ -101,15 +82,11 @@ var swiper = new Swiper(".ubication-slider", {
   },
 });
 
-$(".about-us .row .container .header").click(function(){
-  var contenido=$(this).next(".about-us .row .container .content");
-     
-  if(contenido.css("display")=="none"){ //open		
-     contenido.slideDown(1000);			
-     $(this).addClass("open");
-  }
-  else{ //close		
-     contenido.slideUp(1000);
-     $(this).removeClass("open");	
- }          
-});
+
+function redirectToDevelopment() {
+  window.location.href = '../Front/house-list.html';
+}
+
+function redirectToDetail() {
+  window.location.href = '../Front/house-detail.html';
+}

@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Encode+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Boostrap -->
     <!-- JavaScript Bundle with Popper -->
@@ -49,10 +49,10 @@
 
         <div class="config">
             <button class="billetera"><span>Connect Wallet</span></button>
-            <label>
-                <input type="checkbox" onclick="changeDayNight()">
-                <span class="check"></span>
-            </label>
+            <div class="onoffswitch" >
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked onclick="changeDayNight()">
+                <label class="onoffswitch-label" for="myonoffswitch"></label>
+            </div>
         </div>
     </header>
 
@@ -66,6 +66,12 @@
                 <h1>BNC</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
                 <a href="#" class="btn">White Paper</a>
+                <div class="social-media">
+                    <a><img src="./icons/fb.png"/></a>
+                    <a><img src="./icons/ig.png"/></a>
+                    <a><img src="./icons/yt.png"/></a>
+                    <a><img src="./icons/tw.png"/></a>
+                </div>
             </div>
         </div>
 
@@ -181,7 +187,7 @@
 
         <div class="box-container">
 
-            <div class="box">
+            <div class="box" onclick="redirectToDevelopment();">
                 <div class="image">
                     <img src="images/desarrollopng.png" alt="">
                 </div>
@@ -192,7 +198,7 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" onclick="redirectToDevelopment();">
                 <div class="image">
                     <img src="images/desarrollopng.png" alt="">
                 </div>
@@ -203,7 +209,7 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" onclick="redirectToDevelopment();"> 
                 <div class="image">
                     <img src="images/desarrollopng.png" alt="">
                 </div>
@@ -214,7 +220,7 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" onclick="redirectToDevelopment();">
                 <div class="image">
                     <img src="images/desarrollopng.png" alt="">
                 </div>
@@ -225,7 +231,7 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" onclick="redirectToDevelopment();">
                 <div class="image">
                     <img src="images/desarrollopng.png" alt="">
                 </div>
@@ -239,12 +245,13 @@
 
         </div>
         
+        <!--
         <div style="display: flex;width: 100%;justify-content: center;">
             <div class="btn" style="text-align: center;">
                 <a href='./house-list' style="color: white;">Ver mas</a>
             </div>
         </div>
-        
+        -->
 
     </section>
 
@@ -263,7 +270,7 @@
             <div class="map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.1469006045863!2d-101.9417346848001!3d33.47152598076801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc72a0d4be19fffb7!2sHHC+Living!5e0!3m2!1sen!2sus!4v1515805163078"
-                    width="600" height="450" framebabout-us="0" style="babout-us:0" allowfullscreen></iframe>
+                    width="600" height="450" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -284,8 +291,8 @@
         <div class="row">
 
             <div class="image">
-                <img src="images/quienes-somos.png" style="-webkit-box-shadow: -30px -30px 0 0 #132938;
-                box-shadow: -30px -30px 0 0 #132938;" alt="">
+                <img src="images/quienes-somos.png" style="-webkit-box-shadow: -30px -30px 0 0 var(--image-background);
+                box-shadow: -30px -30px 0 0 var(--image-background);" alt="">
             </div>
 
             <div class="content">
@@ -388,34 +395,42 @@
             <h3>Preguntas Frecuentes</h3>
 
             <div class="container">
-                <div class="header" id="test">
-                    <h3>Cómo y a través de qué medio se pueden comprar los terrenos?</h3>
+                <div class="header" id="collapse1Header">
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                            <h3>Cómo y a través de qué medio se pueden comprar los terrenos?</h3>
+                    </button>
                 </div>
-                <div class="content">
-                    <p>Los lotes se pueden comprar a través de nuestra App BNC:</br>
+                <div class="content collapse" id="collapse1">
+                    <p class="description">Los lotes se pueden comprar a través de nuestra App BNC:</br>
                         En el caso de comprar una participación en % simplemente cargas el monto deseado a invertir en el sector de la Wallet BNC, compras el token BNC con los distintos medios de depósito.</br>
                         Una vez teniendo la cantidad de Tokens con las que desees participar, podes ir al marketplace & seleccionar el desarrollo de tu interés.</br>
                         En el caso de comprar 1 lote entero con nuestro tokens BNC. Puede enterarse de los beneficios del mismo en nuestra pagina www.BNC.COM
-                        También puede cerrar la operación en nuestras oficinas comerciales en Buenos Aires.</p>
+                        También puede cerrar la operación en nuestras oficinas comerciales en Buenos Aires.
+                    </p>
                 </div>
             </div>
 
             <div class="container">
-                <div class="header">
-                    <h3>¿Cómo variará el valor de los terrenos?</h3>
+                <div class="header" id="collapse2Header">
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            <h3>¿Cómo variará el valor de los terrenos?</h3>
+                    </button>
                 </div>
-                <div class="content">
-                    <p>El costo de los proyectos a tokenizar  dependerá de la ubicación y del avance de cada proyecto   El valor de los terrenos varía acorde a la demanda de la ubicación y el avance de obra en el desarrollo.
-                        A medida que se va avanzando en las fases del desarrollo elegido, se realiza una verificación mediante auditoría de obra y luego se realiza una nueva tasación  para actualizar el valor del mismo.</p>
+                <div class="content collapse" id="collapse2">
+                    <p class="description">El costo de los proyectos a tokenizar  dependerá de la ubicación y del avance de cada proyecto   El valor de los terrenos varía acorde a la demanda de la ubicación y el avance de obra en el desarrollo.
+                        A medida que se va avanzando en las fases del desarrollo elegido, se realiza una verificación mediante auditoría de obra y luego se realiza una nueva tasación  para actualizar el valor del mismo.
+                    </p>
                 </div>
             </div>
 
             <div class="container">
-                <div class="header">
-                    <h3>¿Pregunta?</h3>
+                <div class="header" id="collapse3Header">
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            <h3>¿Pregunta?</h3>
+                    </button>
                 </div>
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sequi corrupti corporis quaerat
+                <div class="content collapse" id="collapse3">
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sequi corrupti corporis quaerat
                         voluptatem ipsam neque labore modi autem, saepe numquam quod reprehenderit rem? Tempora aut
                         soluta
                         odio corporis nihil! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sequi
@@ -423,7 +438,8 @@
                         corporis quaerat
                         voluptatem ipsam neque labore modi autem, saepe numquam quod reprehenderit rem? Tempora aut
                         soluta
-                        odio corporis nihil!</p>
+                        odio corporis nihil!
+                    </p>
                 </div>
             </div>
 
@@ -505,6 +521,8 @@
 
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
+    <script src="js/collapse.js"></script>
+    <script src="js/scrolling.js"></script>
 
 </body>
 
