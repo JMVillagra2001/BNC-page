@@ -17,6 +17,10 @@ html{
     background: var(--background);
 }
 
+body{
+    background-color: var(--background)!important;
+}
+
 
 .card{
     flex-direction: row!important;
@@ -225,7 +229,7 @@ header .config button:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 1.5rem;
-    background: var(--primary-color);
+    background: #132938;
 }
 
 .footer .box-container .box h3 {
@@ -309,9 +313,34 @@ header .config button:hover {
     resize: none;
 }
 
-.footer .box-container .box form .btn {
+.footer .box-container .box .btn{
     display: flex;
     margin: 2rem auto;
+
+    width: 60%;
+    max-width: 400px;
+    
+
+    -webkit-border-top-right-radius: 16px;
+    -webkit-border-bottom-left-radius: 16px;
+    -moz-border-radius-topright: 16px;
+    -moz-border-radius-bottomleft: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    color: white;
+    background: var(--secondary-color);
+    cursor: pointer;
+    padding: 12px 48px;
+
+    justify-content: center;
+}
+
+.footer .box-container .box .btn:hover{
+    background: var(--secondary-color);
+    letter-spacing: .1rem;
 }
 
 .titulo3{
