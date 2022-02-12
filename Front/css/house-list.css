@@ -360,3 +360,14 @@ header .config button:hover {
     font-size: 45px;
     font-weight: 600;
 }
+
+.row {
+    --bs-gutter-x: 0!important;
+    --bs-gutter-y: 0!important;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0!important;
+    margin-right: 0!important;
+    margin-left: 0!important;
+    padding: 0 2rem;
+}

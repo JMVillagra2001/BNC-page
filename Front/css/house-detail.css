@@ -220,6 +220,13 @@ header .config button:hover {
     box-shadow: -25px -25px 0px 3px var(--image-background);
     -webkit-box-shadow: -25px -25px 0px 3px var(--image-background);
     -moz-box-shadow: -25px -25px 0px 3px var(--image-background);
+
+    -webkit-border-top-right-radius: 32px;
+    -webkit-border-bottom-left-radius: 32px;
+    -moz-border-radius-topright: 32px;
+    -moz-border-radius-bottomleft: 32px;
+    border-top-right-radius: 32px;
+    border-bottom-left-radius: 32px;
 }
 
 .line-border-right{
@@ -382,4 +389,13 @@ header .config button:hover {
     font-weight: 600;
     
     color: var(--title-color);
+}
+
+.icons{
+    width: 20px;
+    height: 20px;
+    box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    margin-left: -24px;
 }
