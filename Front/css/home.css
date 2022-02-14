@@ -355,10 +355,11 @@ header .config button:hover {
     padding: 16px 15px;
     line-height: 1.2;
 }
-#BNCtoken {
-    color:var(--secondary-color);
-    font-weight: 600;
-    font-size: 20px;
+
+.bnc-token {
+    color:var(--secondary-color)!important;
+    font-weight: 600!important;
+    font-size: 20px!important;
 }
 
 

@@ -233,6 +233,27 @@ header .config button:hover {
     border-right: var(--secondary-color) solid 4px;
 }
 
+.row .token-btn{
+    width: 300px;
+    font-size: 2.2rem;
+    color: white;
+    background: transparent;
+    -webkit-border-top-right-radius: 16px;
+    -webkit-border-bottom-left-radius: 16px;
+    -moz-border-radius-topright: 16px;
+    -moz-border-radius-bottomleft: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    -webkit-box-shadow: 0 0 0 1px #80CCDD;
+    box-shadow: 0 0 0 1px #80CCDD;
+
+    background: #132938;
+    padding: 4px 16px;
+    margin: 16px;
+    text-align: center;
+
+}
+
 
 
 
@@ -394,8 +415,15 @@ header .config button:hover {
 .icons{
     width: 20px;
     height: 20px;
+    margin-left: -24px;
+
     box-shadow: none!important;
     -webkit-box-shadow: none!important;
     -moz-box-shadow: none!important;
-    margin-left: -24px;
+    -webkit-border-top-right-radius: 0!important;
+    -webkit-border-bottom-left-radius: 0!important;
+    -moz-border-radius-topright: 0!important;
+    -moz-border-radius-bottomleft: 0!important;
+    border-top-right-radius: 0!important;
+    border-bottom-left-radius: 0!important;
 }

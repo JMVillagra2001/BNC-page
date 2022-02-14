@@ -90,3 +90,79 @@ function redirectToDevelopment() {
 function redirectToDetail() {
   window.location.href = '../Front/house-detail.html';
 }
+
+const ids = document.querySelectorAll('[id]')
+
+const enHashmap = new Map([
+  ["Project", "Project"],
+  ["Work", "Work"],
+  ["Marketplace", "Marketplace"],
+  ["Ubication", "Ubication"],
+  ["Who", "Who"],
+  ["ConnectWallet", "Connect wallet"],
+  ["HomeTitle", "Bnc"],
+  ["HomeDescription", ""],
+  ["HomeWhitepaper", "Whitepaper"],
+  ["HeaderProject", "Project"],
+  ["ProjectDescription1", "BNC Token"],
+  ["ProjectDescription2", ""],
+  ["ProjectDescription3", "token"],
+  ["ProjectDescription4", ""],
+  ["ProjectDescription5", "BNC Company"],
+  ["ProjectDescription6", ""],
+  ["HeaderFunction", ""],
+  ["FunctionTitle1", ""],
+  ["FunctionDescription1", ""],
+  ["FunctionTitle2", ""],
+  ["FunctionDescription2", ""],
+  ["FunctionTitle3", ""],
+  ["FunctionDescription3", ""],
+  ["FunctionTitle4", ""],
+  ["FunctionDescription4", ""],
+  ["HeaderMarketplace", "Marketplace"],
+
+
+
+]);
+
+const esHashmap = new Map([
+  ["Project", "Proyecto"],
+  ["Work", "¿Como Funciona?"],
+  ["Marketplace", "Mercado"],
+  ["Ubication", "Ubicación"],
+  ["Who", "Quiénes somos"],
+]);
+
+const poHashmap = new Map([
+  ["Project", "Projeto"],
+  ["Work", "Trabalho"],
+  ["Marketplace", "Mercado"],
+  ["Ubication", "Localização"],
+  ["Who", "Quem somos"],
+]);
+
+let langSelected;
+const lang = localStorage.getItem('lang') === undefined || localStorage.getItem('lang') === null ? 'en' : localStorage.getItem('lang');
+switch (lang) {
+  case 'en':
+    langSelected = enHashmap;
+    break;
+  case 'es':
+    langSelected = esHashmap;
+    break;
+  case 'po':
+    langSelected = poHashmap;
+    break;
+  default:
+    langSelected = enHashmap;
+    break;
+}
+
+Array.prototype.forEach.call(ids, function (el) {
+  if (langSelected.get(el.id)) {
+    el.textContent = langSelected.get(el.id)
+    
+    console.log(el)
+  }
+})
+

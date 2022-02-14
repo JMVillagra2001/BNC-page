@@ -28,5 +28,4 @@ window.onscroll = () => {
 
   let header = document.querySelector('header');
   header.classList.toggle('scrolling-active', window.scrollY > 0);
-  console.log(window.scrollY);
 }

@@ -20,15 +20,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Boostrap -->
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/lang.js"></script>
 </head>
 
 <body>
@@ -40,17 +45,18 @@
         <a href="./" class="logo"><img style="height: 90px;" src="images/logo.png" alt=""></a>
 
         <nav class="navbar">
-            <a href="#proyect">Proyecto</a>
-            <a href="#function">¿Como funciona?</a>
-            <a href="#marketplace">Marketplace</a>
-            <a href="#ubication">Ubicaciones</a>
-            <a href="#about-us">Quienes somos</a>
+            <a id="Project" href="#proyect">Proyecto</a>
+            <a id="Work" href="#function">¿Como funciona?</a>
+            <a id="Martketplace" href="#marketplace">Marketplace</a>
+            <a id="Ubication" href="#ubication">Ubicaciones</a>
+            <a id="Who" href="#about-us">Quienes somos</a>
         </nav>
 
         <div class="config">
-            <button class="billetera"><span>Connect Wallet</span></button>
-            <div class="onoffswitch" >
-                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked onclick="changeDayNight()">
+            <button id="ConnectWallet" class="billetera"><span>Connect Wallet</span></button>
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0"
+                    checked onclick="changeDayNight()">
                 <label class="onoffswitch-label" for="myonoffswitch"></label>
             </div>
         </div>
@@ -63,14 +69,15 @@
     <section class="home" id="home">
         <div class="wrap">
             <div class="content">
-                <h1>BNC</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
-                <a href="#" class="btn">White Paper</a>
+                <h1 id="HomeTitle">BNC</h1>
+                <p id="HomeDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?
+                </p>
+                <a id="HomeWhitepaper" href="#" class="btn">White Paper</a>
                 <div class="social-media">
-                    <a><img src="./icons/fb.png"/></a>
-                    <a><img src="./icons/ig.png"/></a>
-                    <a><img src="./icons/yt.png"/></a>
-                    <a><img src="./icons/tw.png"/></a>
+                    <a><img src="./icons/fb.png" /></a>
+                    <a><img src="./icons/ig.png" /></a>
+                    <a><img src="./icons/yt.png" /></a>
+                    <a><img src="./icons/tw.png" /></a>
                 </div>
                 <div style="position: absolute; bottom: 0; right: 0;">
                     <a><img style="width: calc(100px + 6vw); cursor: pointer;" src="./icons/what.png"></a>
@@ -87,7 +94,7 @@
     <section class="proyect" id="proyect">
 
         <div class="head">
-            <h1 class="heading"> Proyecto </h1>
+            <h1 id="HeaderProject" class="heading"> Proyecto </h1>
             <div class="line"></div>
         </div>
 
@@ -95,16 +102,33 @@
         <div class="row">
 
             <div class="content">
-                <span id="BNCtoken">BNC Token</span><span class="parrafo">, dentro del sistema blockchain, proporciona
-                una herramienta fundamental a los fines de fraccionar cada 
-                lote, propiedad o edificio de nuestros desarrollos 
-                inmobiliarios, siendo este</span><span id="BNCtoken"> token </span><span class="parrafo">un equivalente a cada 
-                metro cuadrado (m2 ) que corresponda al 
-                     activo inmobiliario. Por esta misma razón es que</span> 
-                     <span id="BNCtoken"> BNC Company</span><span class="parrafo"> otorga un respaldo inigualable dentro 
-                     del mundo de los negocios inmobiliarios, 
-                     proporcionando garantías respaldadas por 
-                     cada activo subyacente</span>
+               
+                <span id="ProjectDescription1" class="bnc-token">
+                    BNC Token
+                </span>
+               
+                <span id="ProjectDescription2" class="parrafo">, dentro del sistema blockchain, proporciona
+                    una herramienta fundamental a los fines de fraccionar cada lote, propiedad o edificio de nuestros
+                    desarrollosinmobiliarios, siendo este
+                </span>
+
+                <span id="ProjectDescription3" class="bnc-token"> 
+                    token 
+                </span>
+                
+                <span id="ProjectDescription4" class="parrafo">
+                    un equivalente a cadametro cuadrado (m2 ) que corresponda al activo inmobiliario. <br> <br> Por esta misma razón es que
+                </span>
+
+                <span id="ProjectDescription5" class="bnc-token"> 
+                    BNC Company
+                </span>
+
+                <span id="ProjectDescription6" class="parrafo"> 
+                    otorga un respaldo inigualable dentro del mundo de los negocios inmobiliarios, proporcionando garantías respaldadas por
+                    cada activo subyacente
+                </span>
+
             </div>
 
             <div class="video">
@@ -126,7 +150,7 @@
     <section class="function" id="function">
 
         <div class="head">
-            <h1 class="heading"> ¿Como funciona? </h1>
+            <h1 id="HeaderFunction" class="heading"> ¿Como funciona? </h1>
             <div class="line"></div>
         </div>
 
@@ -138,8 +162,8 @@
                     <img src="icons/monedas.png" alt="">
                 </div>
                 <div class="content">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <h3 id="FunctionTitle1">Lorem ipsum</h3>
+                    <p id="FunctionDescription1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                 </div>
             </div>
 
@@ -148,8 +172,8 @@
                     <img src="icons/monedas.png" alt="">
                 </div>
                 <div class="content">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <h3 id="FunctionTitle2">Lorem ipsum</h3>
+                    <p id="FunctionDescription2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                 </div>
             </div>
 
@@ -158,8 +182,8 @@
                     <img src="icons/monedas.png" alt="">
                 </div>
                 <div class="content">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <h3 id="FunctionTitle3">Lorem ipsum</h3>
+                    <p id="FunctionDescription3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                 </div>
             </div>
 
@@ -168,8 +192,8 @@
                     <img src="icons/monedas.png" alt="">
                 </div>
                 <div class="content">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
+                    <h3 id="FunctionTitle4">Lorem ipsum</h3>
+                    <p id="FunctionDescription4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
                 </div>
             </div>
 
@@ -184,7 +208,7 @@
     <section class="marketplace" id="marketplace">
 
         <div class="head">
-            <h1 class="heading">Marketplace </h1>
+            <h1 id="HeaderMaketplace" class="heading">Marketplace </h1>
             <div class="line"></div>
         </div>
 
@@ -197,7 +221,8 @@
                 <div class="content">
                     <h3>Desarrollo</h3>
                     <p>Ubicacion: Pilar</p>
-                    <div class="status"> Estado: <p> En desarrollo </p></div>
+                    <div class="status"> Estado: <p> En desarrollo </p>
+                    </div>
                 </div>
             </div>
 
@@ -208,18 +233,8 @@
                 <div class="content">
                     <h3>Desarrollo</h3>
                     <p>Ubicacion: Pilar</p>
-                    <div class="status"> Estado: <p> En desarrollo </p></div>
-                </div>
-            </div>
-
-            <div class="box" onclick="redirectToDevelopment();"> 
-                <div class="image">
-                    <img src="images/desarrollopng.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Desarrollo</h3>
-                    <p>Ubicacion: Pilar</p>
-                    <div class="status"> Estado: <p> En desarrollo </p></div>
+                    <div class="status"> Estado: <p> En desarrollo </p>
+                    </div>
                 </div>
             </div>
 
@@ -230,7 +245,8 @@
                 <div class="content">
                     <h3>Desarrollo</h3>
                     <p>Ubicacion: Pilar</p>
-                    <div class="status"> Estado: <p> En desarrollo </p></div>
+                    <div class="status"> Estado: <p> En desarrollo </p>
+                    </div>
                 </div>
             </div>
 
@@ -241,13 +257,26 @@
                 <div class="content">
                     <h3>Desarrollo</h3>
                     <p>Ubicacion: Pilar</p>
-                    <div class="status"> Estado: <p> En desarrollo </p></div>
+                    <div class="status"> Estado: <p> En desarrollo </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box" onclick="redirectToDevelopment();">
+                <div class="image">
+                    <img src="images/desarrollopng.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Desarrollo</h3>
+                    <p>Ubicacion: Pilar</p>
+                    <div class="status"> Estado: <p> En desarrollo </p>
+                    </div>
                 </div>
             </div>
 
 
         </div>
-        
+
         <!--
         <div style="display: flex;width: 100%;justify-content: center;">
             <div class="btn" style="text-align: center;">
@@ -299,29 +328,31 @@
             </div>
 
             <div class="content">
-                <span id="BNCtoken"> BNC Company</id> <span class="parrafo">es una empresa innovadora dentro del mercado de bienes 
-                    raíces, siendo esta industria una de las más rentables, seguras y 
-                    estables dentro del sector de  inversiones y  negocios a nivel mundial.
-                </br>
-                </br>
-                    A través de los años, este mercado ha tenido muchas barreras 
-                    para su ingreso, por lo que ha sido sectorizado a un grupo determinado
-                     de personas, permitiendo únicamente acceder a quienes contaban con 
-                     el privilegio económico y los recursos suficientes para llevar adelante
-                     inversiones inmobiliarias.</span>
+                <span id="BNCtoken"> BNC Company</id> <span class="parrafo">es una empresa innovadora dentro del mercado
+                        de bienes
+                        raíces, siendo esta industria una de las más rentables, seguras y
+                        estables dentro del sector de inversiones y negocios a nivel mundial.
+                        </br>
+                        </br>
+                        A través de los años, este mercado ha tenido muchas barreras
+                        para su ingreso, por lo que ha sido sectorizado a un grupo determinado
+                        de personas, permitiendo únicamente acceder a quienes contaban con
+                        el privilegio económico y los recursos suficientes para llevar adelante
+                        inversiones inmobiliarias.</span>
                     </br>
-                </br>
-                    
-                <span id="BNCtoken">BNC Company </id><span class="parrafo">comprende  la importancia y rentabilidad de este 
-                    mercado, que se ha tornado exclusivo para un grupo determinado 
-                    de personas con  un poder adquisitivo por arriba del promedio.
-                </br>
-            </br>
-                    Conociendo la problemática tan frecuente, 
-                    no sólo en Latinoamérica sino en el mundo entero, 
-                    es que por primera vez en el mercado de bienes raíces
-                     acercamos a personas institucionales, frecuentes o
-                      minoristas, a este mercado de inversiones tan prometedor.</span>
+                    </br>
+
+                    <span id="BNCtoken">BNC Company </id><span class="parrafo">comprende la importancia y rentabilidad
+                            de este
+                            mercado, que se ha tornado exclusivo para un grupo determinado
+                            de personas con un poder adquisitivo por arriba del promedio.
+                            </br>
+                            </br>
+                            Conociendo la problemática tan frecuente,
+                            no sólo en Latinoamérica sino en el mundo entero,
+                            es que por primera vez en el mercado de bienes raíces
+                            acercamos a personas institucionales, frecuentes o
+                            minoristas, a este mercado de inversiones tan prometedor.</span>
             </div>
 
         </div>
@@ -399,15 +430,19 @@
 
             <div class="container">
                 <div class="header" id="collapse1Header">
-                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                            <h3>Cómo y a través de qué medio se pueden comprar los terrenos?</h3>
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                        aria-controls="collapse1">
+                        <h3>Cómo y a través de qué medio se pueden comprar los terrenos?</h3>
                     </button>
                 </div>
                 <div class="content collapse" id="collapse1">
                     <p class="description">Los lotes se pueden comprar a través de nuestra App BNC:</br>
-                        En el caso de comprar una participación en % simplemente cargas el monto deseado a invertir en el sector de la Wallet BNC, compras el token BNC con los distintos medios de depósito.</br>
-                        Una vez teniendo la cantidad de Tokens con las que desees participar, podes ir al marketplace & seleccionar el desarrollo de tu interés.</br>
-                        En el caso de comprar 1 lote entero con nuestro tokens BNC. Puede enterarse de los beneficios del mismo en nuestra pagina www.BNC.COM
+                        En el caso de comprar una participación en % simplemente cargas el monto deseado a invertir en
+                        el sector de la Wallet BNC, compras el token BNC con los distintos medios de depósito.</br>
+                        Una vez teniendo la cantidad de Tokens con las que desees participar, podes ir al marketplace &
+                        seleccionar el desarrollo de tu interés.</br>
+                        En el caso de comprar 1 lote entero con nuestro tokens BNC. Puede enterarse de los beneficios
+                        del mismo en nuestra pagina www.BNC.COM
                         También puede cerrar la operación en nuestras oficinas comerciales en Buenos Aires.
                     </p>
                 </div>
@@ -415,25 +450,32 @@
 
             <div class="container">
                 <div class="header" id="collapse2Header">
-                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                            <h3>¿Cómo variará el valor de los terrenos?</h3>
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                        aria-controls="collapse2">
+                        <h3>¿Cómo variará el valor de los terrenos?</h3>
                     </button>
                 </div>
                 <div class="content collapse" id="collapse2">
-                    <p class="description">El costo de los proyectos a tokenizar  dependerá de la ubicación y del avance de cada proyecto   El valor de los terrenos varía acorde a la demanda de la ubicación y el avance de obra en el desarrollo.
-                        A medida que se va avanzando en las fases del desarrollo elegido, se realiza una verificación mediante auditoría de obra y luego se realiza una nueva tasación  para actualizar el valor del mismo.
+                    <p class="description">El costo de los proyectos a tokenizar dependerá de la ubicación y del avance
+                        de cada proyecto El valor de los terrenos varía acorde a la demanda de la ubicación y el avance
+                        de obra en el desarrollo.
+                        A medida que se va avanzando en las fases del desarrollo elegido, se realiza una verificación
+                        mediante auditoría de obra y luego se realiza una nueva tasación para actualizar el valor del
+                        mismo.
                     </p>
                 </div>
             </div>
 
             <div class="container">
                 <div class="header" id="collapse3Header">
-                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                            <h3>¿Pregunta?</h3>
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                        aria-controls="collapse3">
+                        <h3>¿Pregunta?</h3>
                     </button>
                 </div>
                 <div class="content collapse" id="collapse3">
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sequi corrupti corporis quaerat
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sequi
+                        corrupti corporis quaerat
                         voluptatem ipsam neque labore modi autem, saepe numquam quod reprehenderit rem? Tempora aut
                         soluta
                         odio corporis nihil! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sequi
