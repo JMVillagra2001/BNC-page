@@ -14,4 +14,6 @@
     --asks-background: #132938;
     --description-color: #ffffff;
     --title-color: #132938;
+    --filter: none;
+    --other-filter: none;
 }

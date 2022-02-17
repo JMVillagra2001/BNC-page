@@ -1,15 +1,25 @@
 @import "./theme-variables.css";
 
-*{
-    font-family: 'Encode Sans', sans-serif;
-    margin:0; padding:0;
+* {
+    font-family: "Encode Sans", sans-serif;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    outline: none; border:none;
-    transition: all .2s linear;
+    outline: none;
+    border: none;
+    transition: all 0.2s linear;
 }
 
-html{
+.page-link {
+    padding: 0.375rem 1.5rem !important;
+    font-size: 2rem !important;
+}
+
+.disabled{
+    opacity: 0.5;
+}
+html {
     font-size: 70%;
     overflow-x: hidden;
     scroll-padding-top: 5.5rem;
@@ -17,64 +27,62 @@ html{
     background: var(--background);
 }
 
-body{
-    background-color: var(--background)!important;
+body {
+    background-color: var(--background) !important;
 }
 
-
-.card{
-    flex-direction: row!important;
-    box-shadow: 6px 5px 21px -6px rgba(0,0,0,0.61);
-    -webkit-box-shadow: 6px 5px 21px -6px rgba(0,0,0,0.61);
-    -moz-box-shadow: 6px 5px 21px -6px rgba(0,0,0,0.61);
+.card {
+    flex-direction: row !important;
+    box-shadow: 6px 5px 21px -6px rgba(0, 0, 0, 0.61);
+    -webkit-box-shadow: 6px 5px 21px -6px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 6px 5px 21px -6px rgba(0, 0, 0, 0.61);
 }
 
 .card-body {
-    padding: 0!important;
+    padding: 0 !important;
+    box-shadow: 4px 3px 15px 0px var(--nav-color);
+    -webkit-box-shadow: 4px 3px 15px 0px var(--nav-color);
+    -moz-box-shadow: 4px 3px 15px 0px var(--nav-color);
 }
 
-.row{
+.row {
     --bs-gutter-x: 0;
     padding-left: 0;
     padding-left: 0;
 }
 
-.card-height{
+.card-height {
     min-height: calc(100px + 5vw);
 }
 
-.icons{
+.icons {
     width: 20px;
     height: 20px;
 }
 
-
-
-
-
-.head{
+.head {
     padding: 1% 0 0;
     margin: 0 4%;
     width: 300px;
 }
 
-.head .heading{
+.head .heading {
     text-align: right;
-    color:var(--primary-color);
-    font-family: 'Encode Sans';
+    color: var(--primary-color);
+    font-family: "Encode Sans";
     font-size: 52px;
     padding-bottom: 4px;
-    padding: 30px 0em 5px 88px;/*medium 52 azul oscuro*/
+    padding: 30px 0em 5px 88px; /*medium 52 azul oscuro*/
     text-transform: none;
 }
 
-.head .line{
+.head .line {
     width: 425px;
     height: 4px;
     background: var(--secondary-color);
 }
 
-.btn{
+.btn {
     -webkit-border-top-right-radius: 16px;
     -webkit-border-bottom-left-radius: 16px;
     -moz-border-radius-topright: 16px;
@@ -91,14 +99,16 @@ body{
     padding: 16px 48px;
 }
 
-.btn:hover{
+.btn:hover {
     background: var(--secondary-color);
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
 }
 
-header{
-    top:0; left: 0; right:0;
-    padding:0.3rem 7%;
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.3rem 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,29 +117,29 @@ header{
     border-bottom: var(--secondary-color) solid 1px;
 }
 
-header .logo{
-    color:var(--primary-color);
+header .logo {
+    color: var(--primary-color);
     font-size: 2.5rem;
     font-weight: bolder;
 }
 
-header .logo i{
-    color:var(--secondary-color);
+header .logo i {
+    color: var(--secondary-color);
 }
 
-header .navbar a{
+header .navbar a {
     font-size: 1.7rem;
-    padding:.5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     color: white;
     font-weight: 500;
 }
 
 header .navbar a.active,
-header .navbar a:hover{
-    color:#fff;
+header .navbar a:hover {
+    color: #fff;
 }
 
-header .config{
+header .config {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,10 +148,9 @@ header .config{
     background: transparent;
     flex-direction: column;
 }
-header .billetera{
-
+header .billetera {
 }
-header .config button{
+header .config button {
     font-size: 1.5rem;
     color: white;
     background: transparent;
@@ -151,13 +160,12 @@ header .config button{
     -moz-border-radius-bottomleft: 16px;
     border-top-right-radius: 16px;
     border-bottom-left-radius: 16px;
-    -webkit-box-shadow: 0 0 0 1px #80CCDD;
-    box-shadow: 0 0 0 1px #80CCDD;
+    -webkit-box-shadow: 0 0 0 1px #80ccdd;
+    box-shadow: 0 0 0 1px #80ccdd;
 
     background: #132938;
     padding: 4px 16px;
     margin: 16px;
-
 }
 
 header .config button:hover {
@@ -173,17 +181,19 @@ header .config button:hover {
     -webkit-box-shadow: 0 0 0 1px #132938;
     box-shadow: 0 0 0 1px #132938;
 
-    background: #80CCDD;
+    background: #80ccdd;
     padding: 4px 16px;
     margin: 16px;
     font-weight: 500;
-
 }
 
 .onoffswitch {
     margin: 1rem 0 0;
-    position: relative; width: 60px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    position: relative;
+    width: 60px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 .onoffswitch-checkbox {
     position: absolute;
@@ -191,38 +201,41 @@ header .config button:hover {
     pointer-events: none;
 }
 .onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    height: 26px; padding: 0; line-height: 26px;
-    border: 2px solid #80CCDD; border-radius: 26px;
-    background-color: #80CCDD;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 26px;
+    padding: 0;
+    line-height: 26px;
+    border: 2px solid #80ccdd;
+    border-radius: 26px;
+    background-color: #80ccdd;
     transition: background-color 0.3s ease-in;
 }
 .onoffswitch-label:before {
     content: "";
-    display: block; width: 26px; margin: 0px;
-    background:  #132938;
-    position: absolute; top: 0; bottom: 0;
+    display: block;
+    width: 26px;
+    margin: 0px;
+    background: #132938;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     right: 34px;
-    border: 2px solid #80CCDD; border-radius: 26px;
-    transition: all 0.3s ease-in 0s; 
+    border: 2px solid #80ccdd;
+    border-radius: 26px;
+    transition: all 0.3s ease-in 0s;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label {
-    background-color: #80CCDD;
+    background-color: #80ccdd;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-   border-color: #80CCDD;
+.onoffswitch-checkbox:checked + .onoffswitch-label,
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    border-color: #80ccdd;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-    right: 0px; 
+    right: 0px;
 }
-
-
-
-
-
-
-
-
 
 .footer .box-container {
     padding: 2% 6%;
@@ -313,13 +326,12 @@ header .config button:hover {
     resize: none;
 }
 
-.footer .box-container .box .btn{
+.footer .box-container .box .btn {
     display: flex;
     margin: 2rem auto;
 
     width: 60%;
     max-width: 400px;
-    
 
     -webkit-border-top-right-radius: 16px;
     -webkit-border-bottom-left-radius: 16px;
@@ -338,36 +350,36 @@ header .config button:hover {
     justify-content: center;
 }
 
-.footer .box-container .box .btn:hover{
+.footer .box-container .box .btn:hover {
     background: var(--secondary-color);
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
 }
 
-.titulo3{
-    font-family: 'Encode Sans', sans-serif;
+.titulo3 {
+    font-family: "Encode Sans", sans-serif;
     font-size: 18px;
     font-weight: 600;
 }
 
-.per-night{
-    font-family: 'Encode Sans', sans-serif;
+.per-night {
+    font-family: "Encode Sans", sans-serif;
     font-size: 18px;
     font-weight: 400;
 }
 
-.Casa{
-    font-family: 'Encode Sans', sans-serif;
+.Casa {
+    font-family: "Encode Sans", sans-serif;
     font-size: 45px;
     font-weight: 600;
 }
 
 .row {
-    --bs-gutter-x: 0!important;
-    --bs-gutter-y: 0!important;
+    --bs-gutter-x: 0 !important;
+    --bs-gutter-y: 0 !important;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 0!important;
-    margin-right: 0!important;
-    margin-left: 0!important;
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
     padding: 0 2rem;
 }
