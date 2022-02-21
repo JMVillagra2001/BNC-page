@@ -1,0 +1,33 @@
+{{> header }}
+
+<div class="" style="height: 75vh; width: 100vw;">
+  <div class="m-5">
+    <div class="text-right">
+      <a href="/user/create" class="btn btn-primary">Añadir casa</a>
+    </div>
+    <table class="table table-bordered my-3">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+        <tr>
+          <th scope="row">{{this.id}}</th>
+          <td>{{this.firstname}}</td>
+          <td>{{this.lastname}}</td>
+          <td>{{this.email}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+{{> footer }}

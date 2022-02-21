@@ -7,7 +7,13 @@ var session = require('express-session')
 
 // Motor de plantilla
 const hbs = require('hbs');
-const User = require("./model/User");
+//const User = require("./models/User");
+const { createSha1 } = require("./helpers/sha1");
+
+const { config } = require('dotenv');
+config();
+
+
 hbs.registerPartials(__dirname + '/views/partials', function (err) { });
 app.set('view engine', 'hbs');
 app.set("views", __dirname + "/views");
@@ -19,6 +25,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors())
 
+//Models
+const User = require("./models/User");
+const Development = require("./models/Development");
+const House = require("./models/House");
+
 // Sesiones
 app.use(session({
     resave: true,
@@ -29,12 +40,21 @@ app.use(session({
     }
 }))
 
+// Error handler
+app.use((err, req, res, next) => {
+    console.log(`Error: ${JSON.stringify(err)}`);
+    console.log(`Message: ${err.message}`);
+    console.log(`Stack: ${err.stack}`);
+    res.status(err.status || 500);
+    next();
+});
+
 // Aquí detallar rutas
 
-const verifySession = (req, res, next) =>{
-    if(req.session.user){
+const verifySession = (req, res, next) => {
+    if (req.session.user) {
         next()
-    }else{
+    } else {
         res.redirect('/');
     }
 }
@@ -44,20 +64,39 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
 
-
 // Rutas
 app.get('/', (req, res) => {
+    if (req.session.user) {
+        res.redirect('/home');
+    }
     res.render('login');
 });
 
+
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    const user = new User()
-    const result = await user.login(email, password);
-    if(result){
-        req.session.email = req.body.email;
+    const hashPassword = createSha1(password);
+
+    const result = await User.findOne({
+        where: {
+            email,
+            password: hashPassword
+        }
+    })
+
+    if (result) {
+        const user = {
+            email: req.body.email,
+            isAdmin: result.isAdmin,
+            permissions: {
+                canRead: result.canRead,
+                canWrite: result.canWrite,
+                canDelete: result.canDelete
+            }
+        }
+        req.session.user = user;
         res.redirect('/home');
-    }else{
+    } else {
         res.redirect('/');
     }
 });
@@ -67,6 +106,118 @@ app.post('/logout', verifySession, (req, res) => {
     res.redirect('/');
 });
 
-app.get('/home', verifySession, (req, res) => {
+app.get('/home', (req, res) => {
     res.render('index');
+});
+
+//Users 
+
+app.get('/users', async (req, res) => {
+    const users = await User.findAll();
+    res.render('users', { users });
+});
+
+app.get('/users/form', async (req, res) => {
+    res.render('user-form');
+});
+
+app.get('/users/:id/form', async (req, res) => {
+    const user = await User.findOne({
+        where: {
+            id: req.params.id
+        }
+    });
+    if(user){
+        res.render('user-form', { user });
+    }else{
+        res.redirect('/users');
+    }
+});
+
+app.post('/users/create', async (req, res) => {
+    console.log(req.body);
+    const { email, firstname, lastname, password, isAdmin, canRead, canWrite, canDelete } = req.body;
+    if(req.body.id){
+        await User.update({
+            email,
+            firstname,
+            lastname,
+            password: createSha1(password),
+            isAdmin,
+            canRead,
+            canWrite,
+            canDelete
+        }, {
+            where: {
+                id: req.body.id
+            }
+        });
+    }else{
+        try {
+            await User.create({
+                email,
+                firstname,
+                lastname,
+                password: createSha1(password),
+                isAdmin: false,
+                canRead,
+                canWrite,
+                canDelete
+            });   
+        } catch (error) {
+            console.log(error);
+        }
+        
+    }
+    res.redirect('/users');
+});
+
+app.post('/users/delete/:id', async (req, res) => {
+    await User.destroy({
+        where: {
+            id: req.params.id
+        }
+    });
+    res.redirect('/users');
+});
+
+
+//Developments
+
+app.get('/developments', async (req, res) => {
+    const developments = await Development.findAll();
+    res.render('developments', { developments });
+});
+
+//Houses
+
+app.get('/houses', async (req, res) => {
+    const houses = await House.findAll();
+    res.render('houses', { houses });
+});
+
+
+
+// API Front
+
+app.get('/api/developments', async (req, res) => {
+    const develompents = await Development.findAll();
+    res.status(200).json(develompents);
+});
+
+app.get('/api/developments/:id/houses', async (req, res) => {
+    const { id } = req.params;
+
+    if (!id) {
+        return res.status(400).json({
+            message: "No se ha enviado el id del desarrollo"
+        });
+    }
+
+    const houses = await House.findAll({
+        where: {
+            developmentId: id
+        }
+    });
+    return res.status(200).json(houses);
 });
