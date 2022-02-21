@@ -3,53 +3,60 @@
 <div class="container" style="height: 75vh;">
     <div class="row h-100 justify-content-center align-items-center">
         <form action="/users/create" method="post" class="col-9 card p-4">
-            
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" class="form-control" name="email" placeholder="Email" value="{{user.email}}" autofocus>
-            </div>
 
             <div class="form-group">
-                <label>Contraseña</label>
-                <input type="password" class="form-control" name="password" placeholder="Contraseña" value="{{user.password}}">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email" placeholder="Email" value="{{user.email}}"
+                    autofocus>
             </div>
+
+            {{#if user}}
+            {{else}}
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" class="form-control" name="password" placeholder="Contraseña"
+                    value="{{user.password}}">
+            </div>
+            {{/if}}
 
             <div class="form-group">
                 <label>Firstname</label>
-                <input type="text" class="form-control" name="firstname" placeholder="Firstname" value="{{user.firstname}}">
+                <input type="text" class="form-control" name="firstname" placeholder="Firstname"
+                    value="{{user.firstname}}">
             </div>
 
             <div class="form-group">
                 <label>Lastname</label>
-                <input type="text" class="form-control" name="lastname" placeholder="Lastname" value="{{user.lastname}}">
+                <input type="text" class="form-control" name="lastname" placeholder="Lastname"
+                    value="{{user.lastname}}">
             </div>
 
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" name="canRead" id="canRead" value="{{user.canRead}}">
+                <input type="checkbox" class="form-check-input" name="canRead" id="canRead" {{checked user.canWrite}}>
                 <label class="form-check-label">Can read</label>
             </div>
 
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" name="canWrite" id="canWrite" value="{{user.canWrite}}">
+                <input type="checkbox" class="form-check-input" name="canWrite" id="canWrite" {{checked user.canWrite}}>
                 <label class="form-check-label">Can write</label>
             </div>
 
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" name="canDelete" id="canDelete" value="{{user.canDelete}}">
+                <input type="checkbox" class="form-check-input" name="canDelete" id="canDelete" {{checked user.canWrite}}>
                 <label class="form-check-label">Can delete</label>
             </div>
 
 
-            
+
 
 
             {{#if user}}
-                <input type="hidden" name="id" value="{{user.id}}">
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Editar</button>
+            <input type="hidden" name="id" value="{{user.id}}">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Editar</button>
             {{else}}
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Crear</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Crear</button>
             {{/if}}
-            
+
         </form>
     </div>
 </div>

@@ -13,10 +13,15 @@ const { createSha1 } = require("./helpers/sha1");
 const { config } = require('dotenv');
 config();
 
-
+// Handlebars
 hbs.registerPartials(__dirname + '/views/partials', function (err) { });
 app.set('view engine', 'hbs');
 app.set("views", __dirname + "/views");
+
+hbs.registerHelper('checked', function (currentValue) {
+    return currentValue == '1' ? "checked" : '';
+});
+
 
 app.use(express.static(__dirname + "/public"));
 
@@ -127,22 +132,28 @@ app.get('/users/:id/form', async (req, res) => {
             id: req.params.id
         }
     });
-    if(user){
+    if (user) {
         res.render('user-form', { user });
-    }else{
+    } else {
         res.redirect('/users');
     }
 });
 
 app.post('/users/create', async (req, res) => {
     console.log(req.body);
-    const { email, firstname, lastname, password, isAdmin, canRead, canWrite, canDelete } = req.body;
-    if(req.body.id){
+    const { email, firstname, lastname, password } = req.body;
+    let { isAdmin, canRead, canWrite, canDelete } = req.body;
+    
+    canDelete = canDelete == 'on' ? 1 : 0;
+    canWrite = canWrite == 'on' ? 1 : 0;
+    canRead = canRead == 'on' ? 1 : 0;
+    isAdmin = isAdmin == 'on' ? 1 : 0;
+
+    if (req.body.id) {
         await User.update({
             email,
             firstname,
             lastname,
-            password: createSha1(password),
             isAdmin,
             canRead,
             canWrite,
@@ -152,7 +163,7 @@ app.post('/users/create', async (req, res) => {
                 id: req.body.id
             }
         });
-    }else{
+    } else {
         try {
             await User.create({
                 email,
@@ -163,11 +174,11 @@ app.post('/users/create', async (req, res) => {
                 canRead,
                 canWrite,
                 canDelete
-            });   
+            });
         } catch (error) {
             console.log(error);
         }
-        
+
     }
     res.redirect('/users');
 });
