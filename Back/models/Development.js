@@ -1,5 +1,6 @@
 const db = require('../helpers/sequelize');
 const Sequelize = require('sequelize');
+const House = require('./House');
 
 const Development = db.define('developments', {
     name: {
@@ -14,8 +15,9 @@ const Development = db.define('developments', {
 }, {
     paranoid: true,
 });
-
-/*Development.hasMany(require('./House'), {
+ 
+/*
+Development.hasMany(House, {
     foreignKey: 'developmentId',
     onDelete: 'CASCADE'
 });*/

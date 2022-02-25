@@ -1,5 +1,6 @@
 const db = require('../helpers/sequelize');
 const Sequelize = require('sequelize');
+const Development = require('./Development');
 
 const House = db.define('houses', {
     name: {
@@ -36,7 +37,8 @@ const House = db.define('houses', {
     paranoid: true,
 });
 
-/*House.belongsTo(require('./Development'), {
+/*
+House.belongsTo(Development, {
     foreignKey: 'developmentId',
     onDelete: 'CASCADE'
 });*/

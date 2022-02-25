@@ -3,24 +3,36 @@
 <div class="" style="height: 75vh; width: 100vw;">
   <div class="m-5">
     <div class="text-right">
-      <a href="/user/create" class="btn btn-primary">Añadir desarrollo</a>
+      <a href="/developments/form" class="btn btn-primary">Añadir desarrollo</a>
     </div>
     <table class="table table-bordered my-3">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Firstname</th>
-          <th scope="col">Lastname</th>
-          <th scope="col">Email</th>
+          <th scope="col">name</th>
+          <th scope="col">ubication</th>
+          <th scope="col">state</th>
         </tr>
       </thead>
       <tbody>
-        {{#each users}}
+        {{#each developments}}
         <tr>
           <th scope="row">{{this.id}}</th>
-          <td>{{this.firstname}}</td>
-          <td>{{this.lastname}}</td>
-          <td>{{this.email}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.ubication}}</td>
+          <td>{{this.state}}</td>
+
+          <td style="display: flex;">
+            
+            <a href="/developments/{{this.id}}/form" class="btn btn-primary mx-1"><i class="bi bi-pencil-square"></i></a>
+
+            <a href="/developments/{{this.id}}/list" class="btn btn-info mx-1"><i class="bi bi-list"></i></a>
+
+            <form action="/developments/delete/{{this.id}}" method="post">
+              <button type="submit" class="btn btn-danger mx-1"><i class="bi bi-trash"></i></button>
+            </form>
+
+          </td>
         </tr>
         {{/each}}
       </tbody>

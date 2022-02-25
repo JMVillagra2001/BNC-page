@@ -140,10 +140,9 @@ app.get('/users/:id/form', async (req, res) => {
 });
 
 app.post('/users/create', async (req, res) => {
-    console.log(req.body);
     const { email, firstname, lastname, password } = req.body;
     let { isAdmin, canRead, canWrite, canDelete } = req.body;
-    
+
     canDelete = canDelete == 'on' ? 1 : 0;
     canWrite = canWrite == 'on' ? 1 : 0;
     canRead = canRead == 'on' ? 1 : 0;
@@ -200,11 +199,94 @@ app.get('/developments', async (req, res) => {
     res.render('developments', { developments });
 });
 
+app.get('/developments/form', async (req, res) => {
+    res.render('development-form');
+});
+
+app.get('/developments/:id/form', async (req, res) => {
+    const development = await Development.findOne({
+        where: {
+            id: req.params.id
+        }
+    });
+    if (development) {
+        res.render('development-form', { development });
+    } else {
+        res.redirect('/developments');
+    }
+});
+
+app.post('/developments/create', async (req, res) => {
+    const { name, ubication, state } = req.body;
+
+    if (req.body.id) {
+        await Development.update({
+            name,
+            ubication,
+            state
+        }, {
+            where: {
+                id: req.body.id
+            }
+        });
+    } else {
+        try {
+            await Development.create({
+                name, 
+                ubication, 
+                state
+            });
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+    res.redirect('/developments');
+});
+
+app.post('/developments/delete/:id', async (req, res) => {
+    await Development.destroy({
+        where: {
+            id: req.params.id
+        }
+    });
+    res.redirect('/developments');
+});
+
+app.get('/developments/:id/list', async (req, res) => {
+    const developmentId = req.params.id;
+    const houses = await House.findAll({
+        where: {
+            developmentId
+        }
+    });
+    res.render('developments', { houses, developmentId });
+});
+
 //Houses
 
 app.get('/houses', async (req, res) => {
     const houses = await House.findAll();
     res.render('houses', { houses });
+});
+
+app.get('/:developmentId/houses/form/:id', async (req, res) => {
+    const { id, developmentId } = req.params;
+    if(id){
+        const house = await House.findOne({
+            where: {
+                id
+            }
+        });
+        res.render('house-form', { house });
+    }else if(developmentId){
+        const house = {
+            developmentId
+        }
+        res.render('house-form', { house });
+    }else {
+        res.redirect('/developments');
+    }
 });
 
 
