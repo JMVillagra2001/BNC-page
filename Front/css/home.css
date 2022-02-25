@@ -58,6 +58,12 @@ html{
     border-radius: 0!important;
 }
 
+.company-image{
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+}
+
 
 
 /*section:nth-child(even){
