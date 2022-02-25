@@ -30,7 +30,6 @@ function setTheme(theme) {
     root.style.setProperty('--description-color', '#ffffff');
     root.style.setProperty('--filter', "none")
     root.style.setProperty('--other-filter', "none")
-    
 
   } else if (theme === 'dark') {
     root.style.setProperty('--nav-background', '#2a2f32');

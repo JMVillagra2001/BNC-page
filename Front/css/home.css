@@ -43,6 +43,21 @@ html{
     border-radius: 0!important;
 }
 
+.icons-title{
+    width: 26px;
+    height: 26px;
+    margin-left: -24px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    -webkit-border-radius: 0!important;
+    -moz-border-radius: 0!important;
+    border-radius: 0!important;
+}
+
 
 
 /*section:nth-child(even){
@@ -94,6 +109,62 @@ html{
     letter-spacing: .1rem;
 }
 
+.margin-y {
+    margin-top: 4.5rem!important;
+    margin-bottom: 4.5rem!important;
+}
+
+.round-image{
+    border-radius: 50%;
+    max-width: 28rem;
+    height: 28rem;
+}
+
+.round-image img{
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.icons-social{
+    width: 64px;
+    height: 64px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    -webkit-border-radius: 0!important;
+    -moz-border-radius: 0!important;
+    border-radius: 0!important;
+}
+
+.who .text{
+    text-align: left;
+    color: var(--primary-color);
+    font-family: 'Encode Sans';
+    margin-left: 10%;
+}
+
+.who h1{
+    font-size: 2.3rem;
+    margin: 1rem 0 0 0;
+    font-weight: 600;
+}
+
+.who h3{
+    font-size: 1.9rem;
+    margin: 0rem 0 0 0;
+    font-weight: 400;
+}
+
+.who p{
+    font-size: 1.4rem;
+    margin: 0.5rem 0 0 0;
+}
+
 header{
     position: fixed;
     top:0; left: 0; right:0;
@@ -137,9 +208,7 @@ header .config{
     background: transparent;
     flex-direction: column;
 }
-header .billetera{
 
-}
 header .config button{
     font-size: 1.5rem;
     color: white;
@@ -504,8 +573,9 @@ header .config button:hover {
 
 .marketplace .box-container .box .content{
     color: var(--marketplace-text);
-    padding:2rem;
+    padding-left: 20%;
     padding-top: 0;
+    padding-bottom: 2rem;
     cursor: pointer;
     text-align: left;
 }
@@ -527,6 +597,7 @@ header .config button:hover {
     font-size: 1.6rem;
     line-height: 1.5;
     font-weight: 300;
+    margin-left: 4px;
 }
 
 .marketplace .box-container .box .content .status{
@@ -535,6 +606,7 @@ header .config button:hover {
     display: flex;
     font-weight: 300;
     padding: 0 4%;
+    margin-left: 4px;
 }
 
 .marketplace .box-container .box .content .status p{
@@ -652,78 +724,7 @@ header .config button:hover {
     padding-left: 3em;
 }
 
-.about-us .row .content2 h1{
-    color:var(--primary-color);
-    font-size: 2.3rem;
-    font-family: 'Encode Sans';
-    margin: 1rem 0 0 0;
-    font-weight: 600;
-}
 
-.about-us .row .content2 h3{
-    color:var(--primary-color);
-    font-size: 1.9rem;
-    font-family: 'Encode Sans';
-    margin: 0rem 0 0 0;
-    font-weight: 400;
-}
-
-.about-us .row .content2 p{
-    color:var(--primary-color);
-    font-size: 1.4rem;
-    font-family: 'Encode Sans';
-    margin: 0.5rem 0 0 0;
-}
-
-.about-us .row .content2 .box{
-    -webkit-border-top-right-radius: 32px;
-    -webkit-border-bottom-left-radius: 32px;
-    -moz-border-radius-topright: 32px;
-    -moz-border-radius-bottomleft: 32px;
-    border-top-right-radius: 32px;
-    border-bottom-left-radius: 32px;
-    
-}
-
-.about-us .row .content2 .box .image{
-    -webkit-border-top-right-radius: 32px;
-    -moz-border-radius-topright: 32px;
-    border-top-right-radius: 32px;
-
-    height: 20rem;
-    max-width: 20rem;
-    
-    overflow: hidden;
-    position: relative;
-    border-right: none;
-    padding: 0;
-    margin: auto;
-}
-
-.about-us .row .content2 .box .image img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 500%;
-}
-
-.about-us .row .content2 .box .wrap{
-    padding: 1.5rem 10%;
-    color: white;
-    max-width: 320px;
-    display: flex;
-    justify-content: space-between;
-}
-
-/*.about-us .row .content2 .box .wrap span{
-    ;
-    height: 48px;
-}*/
-
-.about-us .row .content2 .box .wrap img{
-    width: 64px;
-    height: 64px;
-}
 
 .about-us .row .container{
     width: 100%;
@@ -812,7 +813,6 @@ header .config button:hover {
 .about-us .row h3 {
     color: var(--title-color);
     width: 100%; 
-    text-align: left; 
     font-size: 3rem;
     font-weight: 500;
  } 
