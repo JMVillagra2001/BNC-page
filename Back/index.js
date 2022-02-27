@@ -217,23 +217,23 @@ app.get('/developments/:id/form', async (req, res) => {
 });
 
 app.post('/developments/create', async (req, res) => {
-    const { name, ubication, state } = req.body;
+    const { id, name, ubication, state } = req.body;
 
-    if (req.body.id) {
+    if (id) {
         await Development.update({
             name,
             ubication,
             state
         }, {
             where: {
-                id: req.body.id
+                id
             }
         });
     } else {
         try {
             await Development.create({
-                name, 
-                ubication, 
+                name,
+                ubication,
                 state
             });
         } catch (error) {
@@ -260,35 +260,74 @@ app.get('/developments/:id/list', async (req, res) => {
             developmentId
         }
     });
-    res.render('developments', { houses, developmentId });
+    res.render('houses', { houses, developmentId });
 });
 
 //Houses
 
-app.get('/houses', async (req, res) => {
-    const houses = await House.findAll();
-    res.render('houses', { houses });
-});
-
-app.get('/:developmentId/houses/form/:id', async (req, res) => {
-    const { id, developmentId } = req.params;
-    if(id){
+app.get('/:developmentId/houses/form', async (req, res) => {
+    const { developmentId } = req.params;
+    const { id } = req.query;
+    if (id) {
         const house = await House.findOne({
             where: {
                 id
             }
         });
         res.render('house-form', { house });
-    }else if(developmentId){
+    } else if (developmentId) {
         const house = {
             developmentId
         }
         res.render('house-form', { house });
-    }else {
+    } else {
         res.redirect('/developments');
     }
 });
 
+app.post('/house/create', async (req, res) => {
+    const { id, name, ubication, neighborhood, mts, rooms, baths, developmentId } = req.body;
+
+    if (id) {
+        await House.update({
+            name,
+            ubication,
+            neighborhood,
+            mts,
+            rooms,
+            baths
+        }, {
+            where: {
+                id
+            }
+        });
+    } else {
+        try {
+            await House.create({
+                name,
+                ubication,
+                neighborhood,
+                mts,
+                rooms,
+                baths,
+                developmentId
+            });
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+    res.redirect(`/developments/${developmentId}/list`);
+});
+
+app.post('/houses/delete/:id', async (req, res) => {
+    await House.destroy({
+        where: {
+            id: req.params.id
+        }
+    });
+    res.redirect('/developments');
+});
 
 
 // API Front
